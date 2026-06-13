@@ -4,6 +4,19 @@ An independent, privacy-first PWA for the **Cult Smart Body Fat Scale (CS-BF01)*
 
 Connect via Bluetooth, get a full body composition breakdown, track trends over time, and chat with an AI coach using your own OpenAI key.
 
+## Screenshots
+
+<div align="center">
+  <img src="screenshots/dashboard-health-overview.webp" width="180" alt="Dashboard" />
+  <img src="screenshots/bluetooth-scale-connect.webp" width="180" alt="Bluetooth scale connect" />
+  <img src="screenshots/trends-weight-history.webp" width="180" alt="Trends — weight history" />
+  <img src="screenshots/trends-metric-picker.webp" width="180" alt="Trends — metric picker" />
+  <img src="screenshots/ai-chat-health-insights.webp" width="180" alt="AI chat health insights" />
+  <img src="screenshots/settings-profiles-units.webp" width="180" alt="Settings — profiles & units" />
+  <img src="screenshots/settings-backup-restore.webp" width="180" alt="Settings — backup & restore" />
+  <img src="screenshots/edit-profile-modal.webp" width="180" alt="Edit profile" />
+</div>
+
 ---
 
 ## Disclaimer
@@ -221,7 +234,7 @@ DerivedMetrics (30+ fields)
 Dexie IndexedDB → Measurement { id, userId, timestamp, raw, derived, notes }
 ```
 
-### Database Schema (v3)
+### Database Schema (v4)
 
 | Table          | Indexes                          |
 | -------------- | -------------------------------- |
