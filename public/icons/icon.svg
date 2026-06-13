@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <!-- Approximates conic-gradient(from 220deg, teal, green, teal) -->
+    <linearGradient id="ring" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#71B1BD"/>
+      <stop offset="50%"  stop-color="#5C8A28"/>
+      <stop offset="100%" stop-color="#71B1BD"/>
+    </linearGradient>
+  </defs>
+  <!-- Gradient ring -->
+  <circle cx="16" cy="16" r="15" fill="url(#ring)"/>
+  <!-- Inner background (matches light bg #F4F5F0 at 85% opacity over ring) -->
+  <circle cx="16" cy="16" r="11.5" fill="#F4F5F0" opacity="0.88"/>
+  <!-- Center dot -->
+  <circle cx="16" cy="16" r="4.5" fill="#11141A"/>
+</svg>

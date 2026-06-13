@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── LIGHT (default) ─── */
+:root {
+  /* Surfaces */
+  --bg:              transparent;
+  --bg-stroke:       rgba(110, 130, 60, 0.28);
+
+  --surface:         rgba(255, 255, 255, 0.78);
+  --surface-strong:  rgba(255, 255, 255, 0.94);
+  --surface-soft:    rgba(255, 255, 255, 0.50);
+  --surface-tint-a:  rgba(213, 234, 179, 0.55);
+  --surface-tint-b:  rgba(204, 232, 241, 0.55);
+  --surface-tint-c:  rgba(194, 223, 227, 0.55);
+
+  --glass-border:    rgba(255, 255, 255, 0.7);
+  --glass-edge:      rgba(255, 255, 255, 0.45);
+  --glass-shadow:    0 6px 28px rgba(17, 20, 26, 0.08);
+  --glass-shadow-lg: 0 12px 40px rgba(17, 20, 26, 0.12);
+
+  --ink:             #11141A;
+  --ink-2:           #4B5563;
+  --ink-3:           #9CA3AF;
+  --ink-on-tint:     #11141A;
+
+  --accent:          #11141A;
+  --accent-on:       #FFFFFF;
+  --brand-green:     #5C8A28;
+  --brand-teal:      #71B1BD;
+
+  --status-ok:       #15803D;
+  --status-warn:     #B45309;
+  --status-alert:    #B91C1C;
+  --status-low:      #1D4ED8;
+
+  --chart-line:      #5C8A28;
+  --chart-fill:      rgba(92, 138, 40, 0.10);
+  --chart-grid:      rgba(17, 20, 26, 0.06);
+  --chart-axis:      #9CA3AF;
+}
+
+/* ─── DARK ─── */
+html.dark {
+  --bg:              transparent;
+  --bg-stroke:       rgba(90, 115, 45, 0.35);
+
+  --surface:         rgba(255, 255, 255, 0.06);
+  --surface-strong:  rgba(255, 255, 255, 0.12);
+  --surface-soft:    rgba(255, 255, 255, 0.03);
+  --surface-tint-a:  rgba(213, 234, 179, 0.10);
+  --surface-tint-b:  rgba(204, 232, 241, 0.10);
+  --surface-tint-c:  rgba(194, 223, 227, 0.10);
+
+  --glass-border:    rgba(255, 255, 255, 0.10);
+  --glass-edge:      rgba(255, 255, 255, 0.18);
+  --glass-shadow:    0 6px 28px rgba(0, 0, 0, 0.45);
+  --glass-shadow-lg: 0 14px 50px rgba(0, 0, 0, 0.55);
+
+  --ink:             #F1F5F9;
+  --ink-2:           rgba(241, 245, 249, 0.7);
+  --ink-3:           rgba(241, 245, 249, 0.45);
+  --ink-on-tint:     #F1F5F9;
+
+  --accent:          #F1F5F9;
+  --accent-on:       #11141A;
+  --brand-green:     #A3E635;
+  --brand-teal:      #67E8F9;
+
+  --status-ok:       #4ADE80;
+  --status-warn:     #FBBF24;
+  --status-alert:    #F87171;
+  --status-low:      #60A5FA;
+
+  --chart-line:      #A3E635;
+  --chart-fill:      rgba(163, 230, 53, 0.16);
+  --chart-grid:      rgba(255, 255, 255, 0.08);
+  --chart-axis:      rgba(241, 245, 249, 0.4);
+}
+
+html, body, #root {
+  height: 100%;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html { background: #F4F5F0; }
+html.dark { background: #141614; }
+
+body {
+  background:
+    linear-gradient(45deg,  var(--bg-stroke) 0%, transparent 32%),
+    linear-gradient(225deg, var(--bg-stroke) 0%, transparent 32%);
+  background-attachment: fixed;
+  min-height: 100dvh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Glass surface helper */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+}
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(180deg, var(--glass-edge), transparent 35%);
+  opacity: 0.6;
+}
+
+.glass-strong {
+  background: var(--surface-strong);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow-lg);
+}
+
+.glass-soft {
+  background: var(--surface-soft);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-border);
+}
+
+/* Smooth scrollbar hidden */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* Spring keyframes */
+@keyframes spring-in {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.animate-spring-in { animation: spring-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade-in { animation: fade-in 0.2s ease-out both; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Native time/date picker icon — invert in dark mode */
+html.dark input[type="time"]::-webkit-calendar-picker-indicator,
+html.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+}
