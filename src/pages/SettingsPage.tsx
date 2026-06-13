@@ -868,7 +868,9 @@ export default function SettingsPage() {
 
         <style>{`
           .modal-input {
+            display: block;
             width: 100%;
+            box-sizing: border-box;
             background: var(--surface);
             border: 1px solid var(--glass-border);
             border-radius: 999px;
