@@ -121,4 +121,4 @@ This project builds on earlier open-source work on BLE scale reverse-engineering
 
 ## License
 
-MIT. Product names are trademarks of their respective owners.
+MIT, see [LICENSE](LICENSE). Product names are trademarks of their respective owners.
